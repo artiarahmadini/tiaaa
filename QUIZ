@@ -1,0 +1,42 @@
+# Program Quiz Algoritma Python
+
+# 1. Input nama mahasiswa
+nama = input("Masukkan nama mahasiswa: ")
+
+# 2. Menentukan target nilai
+if nama.lower() == "andi":
+    target = 70
+elif nama.lower() == "budi":
+    target = 75
+elif nama.lower() == "citra":
+    target = 80
+else:
+    target = 0
+
+if target == 0:
+    print("Nama mahasiswa tidak terdaftar!")
+else:
+    print("Nama mahasiswa:", nama)
+    print("Target nilai:", target)
+
+    percobaan = 1
+    lulus = False
+
+    # 3. Perulangan maksimal 3 kali
+    while percobaan <= 3:
+        print("\nPercobaan ke-", percobaan)
+        nilai = int(input("Masukkan nilai ujian: "))
+
+        if nilai >= target:
+            lulus = True
+            break
+        else:
+            print("Nilai belum mencapai target!")
+            percobaan += 1
+
+    # 4. Menampilkan hasil akhir
+    if lulus:
+        print(nama, "berhasil lulus setelah",
+              percobaan, "kali percobaan!")
+    else:
+        print(nama, "tidak lulus setelah 3 kali percobaan.")
